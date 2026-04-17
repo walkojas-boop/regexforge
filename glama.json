@@ -1,0 +1,13 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "maintainers": ["walkojas-boop"],
+  "categories": ["developer-tools", "regex"],
+  "description": "Deterministic regex synthesis for AI agents. Send labeled examples + optional description, get back a battle-tested regex + test matrix proof + backtracking risk analysis. Zero LLM at serve time. $0.002 per call.",
+  "endpoint": "https://regexforge.jason-12c.workers.dev/mcp",
+  "manifest": "https://regexforge.jason-12c.workers.dev/.well-known/mcp.json",
+  "ai_plugin": "https://regexforge.jason-12c.workers.dev/.well-known/ai-plugin.json",
+  "openapi": "https://regexforge.jason-12c.workers.dev/openapi.json",
+  "llms_txt": "https://regexforge.jason-12c.workers.dev/llms.txt",
+  "pricing": "https://regexforge.jason-12c.workers.dev/v1/pricing",
+  "tags": ["regex", "synthesis", "pbe", "program-by-example", "templates", "agents"]
+}

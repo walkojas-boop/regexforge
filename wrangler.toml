@@ -1,0 +1,14 @@
+name = "regexforge"
+main = "src/index.ts"
+compatibility_date = "2024-12-30"
+compatibility_flags = ["nodejs_compat"]
+
+[observability]
+enabled = true
+
+[[kv_namespaces]]
+binding = "STATE"
+id = "a2207d5eaa354e94b201f0da70f40725"
+
+[vars]
+PLATFORM_WALLET = "0x8ABCE477e22B76121f04c6c6a69eE2e6a12De53e"
