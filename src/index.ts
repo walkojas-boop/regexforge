@@ -60,9 +60,9 @@ export default {
     const { app, charge, err } = createAgentService({
       name: 'regexforge',
       version: '1.0.0',
-      tagline: 'Deterministic regex synthesis for AI agents. Send 20 labeled examples, get back a battle-tested regex + test matrix. No LLM at serve time.',
+      tagline: 'MCP server (streamable HTTP, protocol 2024-11-05) that synthesizes production-grade regexes from labeled examples. Exposes the regexforge_synth tool via standard MCP tools/call. Deterministic symbolic synthesis — zero LLM at serve time.',
       description_for_model:
-        'Use regexforge to get a regex that correctly classifies a batch of labeled strings. POST /v1/synth with {"examples":[{"text":"...","match":true},...], "description":"(optional hint)"}. The service tests every example against a bank of battle-tested templates and picks the one that passes all of them; if none do, it falls back to character-class inference. Returns {regex, flags, test_matrix, backtrack_risk, notes}. Every error response carries a "fix" field. 422 means the examples aren\'t uniquely describable by a regular language.',
+        'MCP server exposing the regexforge_synth tool. Connect from any MCP client (Claude Desktop, Cline, Continue, Cursor, @modelcontextprotocol/sdk, mcp Python SDK) by pointing it at https://regexforge.jason-12c.workers.dev/mcp with an Authorization: Bearer <key> header. Then call tools/call with name="regexforge_synth" and arguments={"description": "...", "examples": [{"text":"...","match":true|false}, ...]}. The tool returns {regex, flags, test_matrix proving every example classifies correctly, backtrack_risk, source (template or char_class), notes}. Synthesis uses a ~65-entry battle-tested template bank with character-class inference as a deterministic fallback; returns a not_expressible error when examples imply a non-regular language. The same tool is also reachable via plain HTTP POST /v1/synth for non-MCP clients, but the MCP transport is the primary integration path. Every error response includes a "fix" field with exact remediation.',
       price_per_call_usd: 0.002,
       free_credits: 50,
       credit_packs: PACKS,
