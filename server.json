@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.walkojas-boop/regexforge",
+  "title": "RegexForge",
+  "description": "Deterministic regex synthesis from labeled examples. Zero LLM, proof matrix, backtracking audit.",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/walkojas-boop/regexforge",
+    "source": "github"
+  },
+  "websiteUrl": "https://regexforge.jason-12c.workers.dev/",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://regexforge.jason-12c.workers.dev/mcp"
+    }
+  ]
+}
